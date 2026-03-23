@@ -10,3 +10,10 @@ exports.create = (name, description) =>
     name,
     description,
   ]);
+
+exports.update = (id, name, description) =>
+  db.query('UPDATE categories SET name=$1, description=$2 WHERE id=$3', [
+    name,
+    description,
+    id,
+  ]);
