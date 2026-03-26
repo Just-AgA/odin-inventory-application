@@ -11,3 +11,18 @@ exports.create = (data) =>
      VALUES ($1,$2,$3,$4,$5)`,
     [data.name, data.description, data.price, data.quantity, data.category_id],
   );
+
+exports.update = (id, data) =>
+  db.query(
+    `UPDATE items
+     SET name=$1, description=$2, price=$3, quantity=$4, category_id=$5
+     WHERE id=$6`,
+    [
+      data.name,
+      data.description,
+      data.price,
+      data.quantity,
+      data.category_id,
+      id,
+    ],
+  );
