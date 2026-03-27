@@ -7,3 +7,8 @@ exports.checkAdmin = (req, res, next) => {
   }
   next();
 };
+
+exports.list = async (req, res) => {
+  const categories = await Category.getAll();
+  res.render('index', { categories: categories.rows });
+};
