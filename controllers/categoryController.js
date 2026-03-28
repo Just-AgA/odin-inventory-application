@@ -22,3 +22,8 @@ exports.detail = async (req, res) => {
     items: items.rows,
   });
 };
+
+exports.create = async (req, res) => {
+  await Category.create(req.body.name, req.body.description);
+  res.redirect('/');
+};
