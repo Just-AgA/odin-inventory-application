@@ -27,3 +27,8 @@ exports.create = async (req, res) => {
   await Category.create(req.body.name, req.body.description);
   res.redirect('/');
 };
+
+exports.update = async (req, res) => {
+  await Category.update(req.params.id, req.body.name, req.body.description);
+  res.redirect('/');
+};
