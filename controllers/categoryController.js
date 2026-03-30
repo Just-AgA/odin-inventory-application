@@ -32,3 +32,8 @@ exports.update = async (req, res) => {
   await Category.update(req.params.id, req.body.name, req.body.description);
   res.redirect('/');
 };
+
+exports.delete = async (req, res) => {
+  await Category.delete(req.params.id);
+  res.redirect('/');
+};
