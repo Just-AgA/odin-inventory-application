@@ -9,3 +9,8 @@ exports.create = async (req, res) => {
   await Item.create(req.body);
   res.redirect(`/categories/${req.body.category_id}`);
 };
+
+exports.update = async (req, res) => {
+  await Item.update(req.params.id, req.body);
+  res.redirect('/');
+};
