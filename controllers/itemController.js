@@ -14,3 +14,8 @@ exports.update = async (req, res) => {
   await Item.update(req.params.id, req.body);
   res.redirect('/');
 };
+
+exports.delete = async (req, res) => {
+  await Item.delete(req.params.id);
+  res.redirect('/');
+};
