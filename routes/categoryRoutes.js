@@ -4,3 +4,5 @@ const controller = require('../controllers/categoryController');
 
 router.get('/', controller.list);
 router.get('/categories/:id', controller.detail);
+
+router.post('/categories/new', controller.create);
