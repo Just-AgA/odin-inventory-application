@@ -20,6 +20,7 @@ exports.detail = async (req, res) => {
   res.render('category_detail', {
     category: category.rows[0],
     items: items.rows,
+    error: req.query.error,
   });
 };
 
