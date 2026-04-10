@@ -35,6 +35,12 @@ exports.update = async (req, res) => {
 };
 
 exports.delete = async (req, res) => {
+  const items = await Item.getByCategory(req.params.id);
+
+  if (items.rows.length > 0) {
+    return res.redirect(`/categories/${req.params.id}?error=hasItems`);
+  }
+
   await Category.delete(req.params.id);
   res.redirect('/');
 };
