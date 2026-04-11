@@ -27,4 +27,5 @@ exports.update = (id, data) =>
     ],
   );
 
-exports.delete = (id) => db.query('DELETE FROM items WHERE id=$1', [id]);
+exports.deleteByCategory = (categoryId) =>
+  db.query('DELETE FROM items WHERE category_id=$1', [categoryId]);
