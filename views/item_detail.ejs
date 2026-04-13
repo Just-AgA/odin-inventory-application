@@ -1,0 +1,17 @@
+<a href="/categories/<%= item.category_id %>" class="back-btn">
+  <button class="secondary">← Back</button>
+</a>
+
+<div class="card">
+  <h1>Edit Item</h1>
+
+  <%- include('partials/itemForm', {
+    action: '/items/' + item.id + '/edit',
+    buttonText: 'Update Item',
+    item: item
+  }) %>
+
+  <form method="POST" action="/items/<%= item.id %>/delete">
+    <button class="danger">Delete</button>
+  </form>
+</div>
