@@ -1,0 +1,15 @@
+<form method="POST" action="<%= action %>">
+  <input
+    type="text"
+    name="name"
+    placeholder="Category name"
+    value="<%= category?.name || '' %>"
+    required
+  />
+
+  <textarea name="description" placeholder="Description">
+<%= category?.description || '' %></textarea
+  >
+
+  <button><%= buttonText %></button>
+</form>
