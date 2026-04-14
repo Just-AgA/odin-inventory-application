@@ -1,0 +1,10 @@
+<a href="/" class="back-btn">
+  <button class="secondary">← Back</button>
+</a><% if (typeof error !== 'undefined' && error === 'hasItems') { %>
+
+  <div class="alert danger">
+    Cannot delete category: it still has items! 
+  </div>
+<% } %>
+
+
