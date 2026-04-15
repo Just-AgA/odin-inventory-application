@@ -7,4 +7,15 @@
   </div>
 <% } %>
 
+<h1><%= category.name %></h1>
+
+<div class="card">
+  <h3>Add Item</h3>
+  <%- include('partials/itemForm', {
+    action: '/items/new',
+    buttonText: 'Add Item',
+    item: null,
+    categoryId: category.id
+  }) %>
+</div>
 
