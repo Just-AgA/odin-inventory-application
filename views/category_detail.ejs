@@ -19,3 +19,32 @@
   }) %>
 </div>
 
+<h2>Items</h2>
+
+<% items.forEach(i => { %>
+  <div class="card">
+
+    <div class="row">
+      <div>
+        <a href="/items/<%= i.id %>"><strong><%= i.name %></strong></a>
+        <div class="muted">Price: <%= i.price %>£ | Quantity: <%= i.quantity %></div>
+      </div>
+
+      <button class="secondary" onclick="toggleEdit(this)">Edit</button>
+    </div>
+
+    <div class="edit-form" style="display:none; margin-top:15px;">
+      <%- include('partials/itemForm', {
+        action: '/items/' + i.id + '/edit',
+        buttonText: 'Update Item',
+        item: i
+      }) %>
+
+      <form method="POST" action="/items/<%= i.id %>/delete">
+        <button class="danger">Delete</button>
+      </form>
+    </div>
+
+  </div>
+<% }) %>
+
