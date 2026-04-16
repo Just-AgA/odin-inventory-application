@@ -48,3 +48,10 @@
   </div>
 <% }) %>
 
+<script>
+function toggleEdit(btn) {
+  const card = btn.closest('.card');
+  card.querySelector('.edit-form').style.display = 'block';
+  btn.style.display = 'none';
+}
+</script>
