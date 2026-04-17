@@ -1,0 +1,11 @@
+<h1>Categories</h1>
+
+<div class="card">
+  <h3>Add Category</h3>
+  <%- include('partials/categoryForm', {
+    action: '/categories/new',
+    buttonText: 'Add Category',
+    category: null
+  }) %>
+</div>
+
