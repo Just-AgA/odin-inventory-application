@@ -9,3 +9,18 @@
   }) %>
 </div>
 
+<% categories.forEach(c => { %>
+  <div class="card">
+
+    <div class="row">
+      <div>
+        <a href="/categories/<%= c.id %>"><strong><%= c.name %></strong></a>
+        <% if (c.description) { %>
+          <div class="muted"><%= c.description %></div>
+        <% } %>
+      </div>
+
+      
+
+  </div>
+<% }) %>
