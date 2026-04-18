@@ -28,7 +28,18 @@
       </div>
     </div>
 
-   
+    <div class="edit-form" style="display:none; margin-top:15px;">
+      <%- include('partials/categoryForm', {
+        action: '/categories/' + c.id + '/edit',
+        buttonText: 'Update Category',
+        category: c
+      }) %>
+
+      <form method="POST" action="/categories/<%= c.id %>/delete">
+        <input name="admin_password" placeholder="Admin password" type="password" required />
+        <button class="danger">Delete</button>
+      </form>
+    </div>
 
   </div>
 <% }) %>
