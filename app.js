@@ -8,3 +8,4 @@ const expressLayouts = require('express-ejs-layouts');
 
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
+app.set('layout', 'layout');
