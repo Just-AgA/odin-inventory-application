@@ -11,3 +11,5 @@ app.use(expressLayouts);
 app.set('layout', 'layout');
 
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/', categoryRoutes);
